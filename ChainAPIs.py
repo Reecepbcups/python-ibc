@@ -61,7 +61,7 @@ chainAPIs = {
     "juno": {
         "denom": "ujuno",
         "name": "Juno",
-        "coingecko_id": "juno",
+        "coingecko_id": "juno-network",
         "explorers": {
             "ping": 'https://ping.pub/juno',
             "mintscan": 'https://www.mintscan.io/juno',
@@ -81,8 +81,9 @@ chainAPIs = {
     "chihuahua": "huahua",
     "huahua": {
         "denom": "uhuahua",
-        "name": "Chihuahua",
-        "coingecko_id": "",
+        "name": "Chihuahua Chain",
+        "coingecko_id": "chihuahua-token",
+        "ibc_hash": "ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228", # TODO: add to others as well, are these constant?
         "explorers": {
             "ping": 'https://ping.pub/chihuahua',
             "mintscan": 'https://www.mintscan.io/chihuahua',
@@ -119,7 +120,7 @@ chainAPIs = {
     "atom": {
         "denom": "uatom",
         "name": "Cosmos Hub",
-        "coingecko_id": "cosoms",
+        "coingecko_id": "cosmos",
         "explorers": {
             "ping": 'https://ping.pub/cosmos',
             "mintscan": 'https://www.mintscan.io/cosmos',
@@ -136,7 +137,7 @@ chainAPIs = {
     "akt": {
         "denom": "uakt",
         "name": "Akash",
-        "coingecko_id": "akash",
+        "coingecko_id": "akash-network",
         "explorers": {
             "ping": 'https://ping.pub/akash-network',
             "mintscan": 'https://www.mintscan.io/akash',
@@ -159,7 +160,7 @@ chainAPIs = {
             "mintscan": 'https://www.mintscan.io/stargaze',
             "keplr": 'https://wallet.keplr.app/chains/stargaze'
         },
-        "rest_root": "https://rest.stargaze-apis.com", 
+        "rest_root": "https://api-stargaze-ia.notional.ventures/", 
         "rpc_root": "https://rpc.cosmos.directory/stargaze",
         "twitter": "@StargazeZone",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/images/stars.png",
@@ -167,7 +168,7 @@ chainAPIs = {
     },
 
     "kava": {
-        "denom": "",
+        "denom": "ukava",
         "name": "Kava",
         "coingecko_id": "kava",
         "explorers": {
@@ -185,7 +186,7 @@ chainAPIs = {
     "like": {
         "denom": "ulike",
         "name": "Likecoin",
-        "coingecko_id": "",
+        "coingecko_id": "likecoin",
         "explorers": {
             "ping": 'https://ping.pub/likecoin',
         },
@@ -196,21 +197,24 @@ chainAPIs = {
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json",
     },
 
+    "persistence":"xprt",
     "xprt": {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uxprt",
+        "name": "Persistence",
+        "coingecko_id": "persistence",
         "explorers": {
             "ping": 'https://ping.pub/persistence',
             "mintscan": 'https://www.mintscan.io/persistence',
             "keplr": 'https://wallet.keplr.app/chains/persistence',            
         },
         "rest_root": "https://rest.core.persistence.one", 
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/persistence",
         "twitter": "@PersistenceOne",
-        "logo": "",
-        "chain-registry": "",
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/xprt.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/chain.json",
     },
+
+    "comdex":"cmdx",
     "cmdx": {
         "denom": "uxmdx",
         "name": "Comdex",
@@ -222,94 +226,100 @@ chainAPIs = {
         "rest_root": "https://rest.comdex.one", 
         "rpc_root": "",
         "twitter": "@ComdexOfficial",
-        "logo": "",
-        "chain-registry": "",
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/cmdx.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json",
     },
 
     
     'bcna': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ubcna",
+        "name": "BitCanna",
+        "coingecko_id": "bitcanna",
         "explorers": {
             "ping": "https://ping.pub/bitcanna",
             "mintscan": "https://www.mintscan.io/bitcanna"
         },
         "rest_root": "https://lcd.bitcanna.io",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/bitcanna",
         "twitter": "@BitCannaGlobal",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/images/bcna.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json"
     },
+
+    "bitsong": "btsg",
     'btsg': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ubtsg",
+        "name": "BitSong",
+        "coingecko_id": "bitsong",
         "explorers": {
             "ping": "https://ping.pub/bitsong",
             "mintscan": "https://www.mintscan.io/bitsong"
         },
         "rest_root": "https://lcd-bitsong.itastakers.com",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/bitsong",
         "twitter": "@BitSongOfficial",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/btsg.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json"
     },
+
+    "bandchain": "band",
     'band': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uband",
+        "name": "Band Protocol",
+        "coingecko_id": "band-protocol",
         "explorers": {
             "ping": "https://ping.pub/band-protocol",
             "mintscan": "https://www.mintscan.io/akash"
         },
         "rest_root": "https://laozi1.bandchain.org/api",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/bandchain",
         "twitter": "@BandProtocol",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/images/band.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json"
     },
+
+    "bostrom": "boot",
     'boot': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "boot",
+        "name": "Bostrom",
+        "coingecko_id": "bostrom",
         "explorers": {
             "ping": "https://ping.pub/bostrom",
             "keplr": "https://wallet.keplr.app/chains/bostrom"
         },
         "rest_root": "https://lcd.bostrom.cybernode.ai",
-        "rpc_root": "",
-        "twitter": "",
-        "logo": "",
-        "chain-registry": ""
+        "rpc_root": "https://rest.cosmos.directory/bostrom",
+        "twitter": "@Cyber_devs",
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/images/boot.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/chain.json"
     },
     'cheqd': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ncheq",
+        "name": "cheqd",
+        "coingecko_id": "cheqd-network",
         "explorers": {
             "ping": "https://ping.pub/cheqd"
         },
         "rest_root": "https://api.cheqd.net",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/cheqd",
         "twitter": "@cheqd_io",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cheqd/images/cheq.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cheqd/chain.json"
     },
     'cro': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "basecro",
+        "name": "Cronos",
+        "coingecko_id": "cronos",
         "explorers": {
             "ping": "https://ping.pub/crypto-com-chain",
             "mintscan": "https://www.mintscan.io/crypto-org",
             "keplr": "https://wallet.keplr.app/chains/crypto-org"
         },
-        "rest_root": "https://mainnet.crypto.org:1317",
-        "rpc_root": "",
+        "rest_root": "https://rest.cosmos.directory/cronos",
+        "rpc_root": "https://rpc.cosmos.directory/cronos",
         "twitter": "@cryptocom",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/images/cronos.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json"
     },
     'evmos': {
         "denom": "",
@@ -323,95 +333,95 @@ chainAPIs = {
         "rest_root": "https://rest.bd.evmos.org:1317",
         "rpc_root": "",
         "twitter": "@EvmosOrg",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json"
     },
     'fetch': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "afet",
+        "name": "Fetch",
+        "coingecko_id": "fetch-ai",
         "explorers": {
             "ping": "https://ping.pub/fetchhub",
             "mintscan": "https://www.mintscan.io/fetchai"
         },
         "rest_root": "https://rest-fetchhub.fetch.ai",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/fetchhub",
         "twitter": "@Fetch_ai",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/fetchhub/images/fet.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/fetchhub/chain.json"
     },
     'grav': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ugraviton",
+        "name": "Gravity Bridge",
+        "coingecko_id": "graviton",
         "explorers": {
             "ping": "https://ping.pub/gravity-bridge",
             "mintscan": "https://www.mintscan.io/gravity-bridge",
             "keplr": "https://wallet.keplr.app/chains/gravity-bridge"
         },
         "rest_root": "https://gravitychain.io:1317",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/gravitybridge",
         "twitter": "@gravity_bridge",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/grav.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/chain.json"
     },
     'inj': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uinj",
+        "name": "Injective",
+        "coingecko_id": "injective-protocol",
         "explorers": {
             "ping": "https://ping.pub/injective",
             "mintscan": "https://www.mintscan.io/injective"
         },
         "rest_root": "https://public.lcd.injective.network",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/injective",
         "twitter": "@InjectiveLabs",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/images/inj.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/chain.json"
     },
     'iris': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uiris",
+        "name": "IRISnet",
+        "coingecko_id": "iris-network",
         "explorers": {
             "ping": "https://ping.pub/iris-network",
             "mintscan": "https://www.mintscan.io/iris",
             "keplr": "https://wallet.keplr.app/chains/irisnet"
         },
         "rest_root": "https://lcd-iris.keplr.app",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/irisnet",
         "twitter": "@irisnetwork",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/images/iris.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/chain.json"
     },
     'iov': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uiov",
+        "name": "Starname",
+        "coingecko_id": "starname",
         "explorers": {
             "ping": "https://ping.pub/starname",
             "mintscan": "https://www.mintscan.io/starname",
             "keplr": "https://wallet.keplr.app/chains/starname"
         },
         "rest_root": "https://lcd-iov.keplr.app",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/starname",
         "twitter": "@starname_me",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/starname/images/iov.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/starname/chain.json"
     },
     'lum': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ulum",
+        "name": "Lum Network",
+        "coingecko_id": "lum-network",
         "explorers": {
             "ping": "https://ping.pub/lum-network",
             "mintscan": "https://www.mintscan.io/lum"
         },
         "rest_root": "https://node0.mainnet.lum.network/rest",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/lumnetwork",
         "twitter": "@lum_network",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/images/lum.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json"
     },
     'regen': {
         "denom": "",
