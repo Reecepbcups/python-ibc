@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name = 'pyibc',
+    name = 'python-ibc',
     version = '0.1.0',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["pyibc"],
