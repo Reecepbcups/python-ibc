@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name = 'cosmpy-api',
-    version = '0.1.7',
+    version = '0.2.0',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["cosmpy_api"],
     package_dir = {'':'src'},

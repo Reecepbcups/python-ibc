@@ -111,7 +111,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/cosmos',
             "keplr": 'https://wallet.keplr.app/chains/cosmos-hub'
         },
-        "rest_root": "https://rest.cosmos.directory/cosmoshub", 
+        "rest_root": "https://lcd-cosmoshub.whispernode.com/", 
         "rpc_root": "https://rpc.cosmos.directory/cosmoshub",
         "twitter": "@Cosmos",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
@@ -315,7 +315,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/evmos",
             "keplr": "https://wallet.keplr.app/chains/evmos/proposals"
         },
-        "rest_root": "https://rest.bd.evmos.org:1317",
+        "rest_root": "https://lcd.evmos.ezstaking.io/",
         "rpc_root": "",
         "twitter": "@EvmosOrg",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.png",

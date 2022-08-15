@@ -33,6 +33,12 @@ def get_outstanding_commission_rewards_str(valop: str, rest_endpoint: str = ""):
     data = get_outstanding_commission_rewards(valop, rest_endpoint, humanReadable=True)
     return ", ".join([f"{k}: {v}" for k, v in data.items()])
 
+def get_latest_block_transactions(rest_endpoint: str = "", block: str = "latest") -> list:
+    l = f'{rest_endpoint}/blocks/{block}'
+    # print(l)
+    response = requests.get(l, headers=headers).json()
+    return response['block']['data']['txs']
+
 
 if __name__ == "__main__":
     from cosmpy_api import get_chain

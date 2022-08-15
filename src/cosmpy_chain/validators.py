@@ -1,10 +1,11 @@
 import requests
 
-from .convert import simplify_balance_str
+from .convert import simplify_balance_str # . when live, remove . for testing here
 
 from cosmpy_api.chain_apis import REST_ENDPOINTS
 
 headers = {'accept': 'application/json'}
+# PAGE_LIMIT = "?pagination.limit=1000"
 
 def get_validator_stats(chain, rest_url, operator_address, include_number_of_unique_delegations=False) -> dict:
     '''
@@ -46,6 +47,14 @@ def get_validator_stats(chain, rest_url, operator_address, include_number_of_uni
     except:
         pass
 
+    validator_ranking = get_latest_validator_set_sorted(rest_url, bondedOnly=False)
+    # find index of operator_address in validator_ranking
+    index = 1
+    for k in validator_ranking.keys():
+        if k == operator_address:
+            break
+        index += 1
+
     return {
         "chain": chain,
         "operator_address": validatorData['operator_address'],
@@ -58,7 +67,46 @@ def get_validator_stats(chain, rest_url, operator_address, include_number_of_uni
         "website": validatorData['description']['website'],
         "security_contact": validatorData['description']['security_contact'],
         "commission": validatorData['commission']['commission_rates']['rate'],
+        "validator_ranking": index,
         "max_validators": paramsData['max_validators'],
         "bond_denom": paramsData['bond_denom'],        
         "unique_delegators": uniqueDelegators,        
     }
+
+
+def get_latest_validator_set_sorted(rest_url, bondedOnly: bool = True):    
+    link = f'{rest_url}/cosmos/staking/v1beta1/validators?pagination.limit=1000'
+    if bondedOnly: link += '&status=BOND_STATUS_BONDED'
+    validators = {}
+    
+    response = requests.get(link, headers=headers).json()
+    for val in response['validators']:
+        # print(val) # sort them?
+        # exit()
+        opp_addr = val['operator_address']
+        moniker = val['description']['moniker']
+        identity = val['description']['identity']
+        status = val['status']
+        tokens = val['tokens']        
+        validators[opp_addr] = {'moniker': moniker, 'identity': identity, "status": status, "token_share": int(tokens)}
+
+    return {k: v for k, v in sorted(validators.items(), key=lambda x: x[1]['token_share'], reverse=True)}
+
+def get_validator_slashes(rest_url, valop: str) -> list:
+    response = requests.get(f'{rest_url}/cosmos/distribution/v1beta1/validators/{valop}/slashes').json()
+    return response['slashes']
+
+if __name__ == "__main__":
+    # vals = get_latest_validator_set_sorted("https://lcd-osmosis.blockapsis.com", True)
+    # for idx, op_addr in enumerate(vals, 1):
+    #     print(idx, op_addr, vals[op_addr])
+    #     if idx > 13: break
+
+    stats = get_validator_stats(
+        chain="osmosis", 
+        rest_url="https://api.osmosis.interbloc.org", 
+        operator_address="osmovaloper16s96n9k9zztdgjy8q4qcxp4hn7ww98qk5wjn0s", 
+        include_number_of_unique_delegations=True
+    )
+
+    print(stats)
