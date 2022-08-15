@@ -1,21 +1,12 @@
 '''
-Dict of chains in the following format:
+Dict of chains following the same schema so all my applications can use.
 
-{
-    "ticker": [
-        "LCD endpoints for validator stats",
-        {
-            "ping": "https://ping.pub/ticker/gov/",
-            "mintscan": "https://mintscan.io/ticker/proposals/",
-        },
-        "@twitter"
-    ]
-}
-
-Take from:
+Used in / for:
 - https://github.com/Reecepbcups/cosmos-validator-income-tracker (prices, queries, etc.)
+- https://github.com/Reecepbcups/cosmos-governance-bot
+- https://github.com/Reecepbcups/cosmos-balance-bot
 
-curl -X GET "https://api.cosmos.network/cosmos/staking/v1beta1/validators/cosmosvaloper16s96n9k9zztdgjy8q4qcxp4hn7ww98qkrka4zk" -H "accept: application/json"
+
 '''
 
 # /cosmos/staking/v1beta1/validators/<address>
@@ -40,7 +31,7 @@ REST_ENDPOINTS = {
     "proposals": "/cosmos/gov/v1beta1/proposals",
 }
 
-chainAPIs = {
+CHAIN_APIS = {
     # alias pointing to the main dict, have a check instance == str type
     # "udig": "dig",
     # "dig-chain": "dig",
@@ -90,10 +81,6 @@ chainAPIs = {
         },
         "rest_root": "https://api.chihuahua.wtf", 
         "rpc_root": "https://rpc.cosmos.directory/chihuahua",
-        "endpoints": {
-            "validators": "/cosmos/staking/v1beta1/validators/",
-            "proposals": "/cosmos/gov/v1beta1/proposals",
-        },
         "twitter": "@ChihuahuaChain",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/images/huahua.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json",
@@ -507,7 +494,7 @@ chainAPIs = {
         "coingecko_id": "kujira",
         "explorers": {
             "ping": "https://explorer.chaintools.tech/kujira",
-            "kujira": "https://kujira.explorers.guru/" # TODO: add
+            # "kujira": "https://kujira.explorers.guru/" # TODO: add
         },
         "rest_root": "https://kujira-api.polkachu.com",
         "rpc_root": "https://rpc.cosmos.directory/kujira",
@@ -558,5 +545,20 @@ chainAPIs = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/images/umee.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/chain.json"
     },
-
 }
+
+
+def get_chain(name):
+    if name not in CHAIN_APIS:
+        raise ValueError("Unknown chain: {}".format(name))
+    
+    value = CHAIN_APIS[name]
+
+    if isinstance(value, str):
+        # value is a string, so we get that string, and use that value to get the object
+        return get_chain(value)
+
+    return value
+
+if __name__ == "__main__":
+    print(get_chain('comdex'))
