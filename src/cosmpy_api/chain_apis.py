@@ -50,7 +50,7 @@ DAOs = { # Juno DAO_DAO Chains here
         "twitter": "@raw_dao",
     },
     "rac": {
-        "name": "Racoon Supply",
+        "name": "Racøøn DAO",
         "proposals": f"{JUNO_REST_API}/juno16l0ymhpwfm63gdcjv8q32z7hqzv8g22spw6ul75l76s5lxtw4anscc5eek/smart/eyJsaXN0X3Byb3Bvc2FscyI6e319?encoding=base64",
         "vote": "https://daodao.zone/dao/juno1svduqrvcmzpl5g74q8rkm6rhcjnhch2yaagzu4ljuv2u9tf86ltqx9a54s/proposals/A",
         "twitter": "@RacoonSupply",
