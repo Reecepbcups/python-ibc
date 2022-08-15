@@ -15,6 +15,27 @@ def simplify_balance(denom: str, amount) -> dict:
         # return f"{int(amount)} {denom}"
         return {denom: float(amount)}
 
+def simplify_balances_dict(balances: dict, show_ibc_hash=False, show_gamm=False) -> dict:
+    '''
+    Reduces [{"denom": "ucraft","amount": "69908452"},{"denom": "uexp","amount": "1000100"}]
+    To: {'ucraft':69908452, 'uexp':1000100}
+    '''
+    output = {}
+    for balance in balances:
+        denom = balance['denom']
+        amount = balance['amount']
+
+        if show_ibc_hash and denom.startswith('ibc/'):
+            continue # skip non native assets
+        elif show_gamm and denom.startswith('gamm'):
+            continue # skip osmo pools
+        
+        for k, v in simplify_balance(denom, amount).items():
+            output[k] = v
+    
+    return dict(output)    
+
+
 def simplify_balance_str(denom: str, amount) -> str:
     output = ""
     for d, amt in simplify_balance(denom, amount).items():

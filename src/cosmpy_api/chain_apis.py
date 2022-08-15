@@ -39,6 +39,7 @@ REST_ENDPOINTS = {
     "validator_info": "cosmos/staking/v1beta1/validators",
     "proposals": "cosmos/gov/v1beta1/proposals",
     "params": "cosmos/staking/v1beta1/params",
+    "balances": "cosmos/bank/v1beta1/balances",
 }
 
 JUNO_REST_API = "https://rest-juno.ecostake.com/cosmwasm/wasm/v1/contract/"
@@ -537,25 +538,25 @@ CHAIN_APIS = {
     },
 }
 
+aliases = {
+    # alias: name in CHAIN_APIS
+    "terra-classic": "terraC",
+    "dvpn": "sent",
+    "provenance": "hash",
+    "bostrom": "boot",
+    "bandchain": "band",
+    "bitsong": "btsg",
+    "comdex":"cmdx",
+    "persistence":"xprt",
+    "stargaze": "stars",
+    "akash": "akt",
+    "cosmos": "atom",
+    "osmosis": "osmo",
+    "chihuahua": "huahua",
+    "dig-chain": "dig"
+}
 
 def get_chain(name):
-    aliases = {
-        # alias: name in CHAIN_APIS
-        "terra-classic": "terraC",
-        "dvpn": "sent",
-        "provenance": "hash",
-        "bostrom": "boot",
-        "bandchain": "band",
-        "bitsong": "btsg",
-        "comdex":"cmdx",
-        "persistence":"xprt",
-        "stargaze": "stars",
-        "akash": "akt",
-        "cosmos": "atom",
-        "osmosis": "osmo",
-        "chihuahua": "huahua",
-        "dig-chain": "dig"
-    }
     if name not in CHAIN_APIS.keys() and name not in aliases.keys():
         raise ValueError("Unknown chain: {}".format(name))
     
@@ -565,6 +566,13 @@ def get_chain(name):
         
     value = CHAIN_APIS[name]
     return value
+
+def get_all_chains():
+    # get all CHAIN_APIS keys & aliases keys
+    keys = list(CHAIN_APIS.keys())
+    for alias in aliases.keys():
+        keys.append(alias)
+    return keys
 
 def get_endpoint(key) -> str:
     if key not in REST_ENDPOINTS.keys():

@@ -5,7 +5,7 @@ from cosmpy_api.chain_apis import get_chain
 from cosmpy_price.token_price import get_price
 
 
-from cosmpy_chain.convert import simplify_balance, simplify_balance_str
+from cosmpy_chain.convert import simplify_balance, simplify_balance_str, simplify_balances_dict
 from cosmpy_chain.queries import get_latest_block_height, get_outstanding_commission_rewards, get_outstanding_commission_rewards_str
 from cosmpy_chain.validators import get_validator_stats
 
@@ -17,9 +17,11 @@ __all__ = [
     'CHAIN_APIS',
     'CUSTOM_EXPLORER_LINKS',
     'DAOs',
+    'get_all_chains',
     # utils
     'simplify_balance',
     'simplify_balance_str',
+    'simplify_balances_dict'
     # chain / validator queries
     'get_latest_block_height',
     'get_outstanding_commission_rewards',
