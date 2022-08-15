@@ -424,131 +424,139 @@ chainAPIs = {
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json"
     },
     'regen': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uregen",
+        "name": "Regen Network",
+        "coingecko_id": "regen",
         "explorers": {
             "ping": "https://ping.pub/regen",
             "mintscan": "https://www.mintscan.io/regen",
             "keplr": "https://wallet.keplr.app/chains/regen"
         },
         "rest_root": "https://regen.stakesystems.io",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/regen",
         "twitter": "@regen_network",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/images/regen.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json"
     },
+
+    "provenance": "hash",
     'hash': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "nhash",
+        "name": "Provenance Blockchain",
+        "coingecko_id": "provenance-blockchain",
         "explorers": {
-            "ping": "https://ping.pub/provenance"
+            "ping": "https://ping.pub/provenance",
+            "mintscan": "https://www.mintscan.io/provenance",
         },
         "rest_root": "https://api.provenance.io",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/provenance",
         "twitter": "@provenancefdn",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/provenance/images/hash.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/provenance/chain.json"
     },
     'secret': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uscrt",
+        "name": "Secret Network",
+        "coingecko_id": "secret",
         "explorers": {
             "ping": "https://ping.pub/secret",
             "mintscan": "https://www.mintscan.io/secret",
             "keplr": "https://wallet.keplr.app/chains/secret-network"
         },
         "rest_root": "https://api.scrt.network",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/secretnetwork",
         "twitter": "@SecretNetwork",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/scrt.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/chain.json"
     },
+    
+    "dvpn": "sent",
     'sent': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "udvpn",
+        "name": "Sentinel",
+        "coingecko_id": "sentinel",
         "explorers": {
             "ping": "https://ping.pub/sentinel",
             "mintscan": "https://www.mintscan.io/sentinel",
             "keplr": "https://wallet.keplr.app/chains/sentinel"
         },
         "rest_root": "https://lcd-sentinel.keplr.app",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/sentinel",
         "twitter": "@Sentinel_co",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/images/dvpn.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json"
     },
     'sif': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "rowan",
+        "name": "Sifchain",
+        "coingecko_id": "sifchain",
         "explorers": {
             "ping": "https://ping.pub/sifchain",
             "mintscan": "https://www.mintscan.io/sifchain",
             "keplr": "https://wallet.keplr.app/chains/sifchain"
         },
         "rest_root": "https://api.sifchain.finance:443",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/sifchain",
         "twitter": "@sifchain",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/images/rowan.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json"
     },
     'kuji': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "ukuji",
+        "name": "Kujira",
+        "coingecko_id": "kujira",
         "explorers": {
-            "ping": "https://explorer.chaintools.tech/kujira"
+            "ping": "https://explorer.chaintools.tech/kujira",
+            "kujira": "https://kujira.explorers.guru/" # TODO: add
         },
         "rest_root": "https://kujira-api.polkachu.com",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/kujira",
         "twitter": "@TeamKujira",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/images/kuji.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/chains.json"
     },
+
+    "terra-classic": "terraC",
     'terraC': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uluna",
+        "name": "Terra Classic",
+        "coingecko_id": "terra-luna",
         "explorers": {
             "ping": "https://ping.pub/terra-luna"
         },
         "rest_root": "https://blockdaemon-terra-lcd.api.bdnodes.net:1317",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/terra",
         "twitter": "@terraC_money",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/luna.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chains.json"
     },
     'terra': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uluna",
+        "name": "Terra2",
+        "coingecko_id": "terra-luna-2",
         "explorers": {
             "ping": "https://ping.pub/terra2"
         },
         "rest_root": "https://phoenix-lcd.terra.dev",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/terra2",
         "twitter": "@terra_money",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/images/luna.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/chain.json"
     },
     'umee': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uumee",
+        "name": "umee",
+        "coingecko_id": "umee",
         "explorers": {
             "ping": "https://ping.pub/umee",
             "mintscan": "https://www.mintscan.io/umee",
             "keplr": "https://wallet.keplr.app/chains/umee"
         },
         "rest_root": "https://api.blue.main.network.umee.cc",
-        "rpc_root": "",
+        "rpc_root": "https://rpc.cosmos.directory/umee",
         "twitter": "@Umee_CrossChain",
-        "logo": "",
-        "chain-registry": ""
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/images/umee.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/chain.json"
     },
 
 }
