@@ -9,7 +9,7 @@ Used in / for:
 
 '''
 
-# /cosmos/staking/v1beta1/validators/<address>
+# NOTE: no /'s after any URL
 
 PAGES = {
     "ping": {
@@ -27,8 +27,10 @@ PAGES = {
 }
 
 REST_ENDPOINTS = {
-    "validator_info": "/cosmos/staking/v1beta1/validators/",
-    "proposals": "/cosmos/gov/v1beta1/proposals",
+    # DO NOT START WITH A /, this way we have to do in our f string
+    "validator_info": "cosmos/staking/v1beta1/validators",
+    "proposals": "cosmos/gov/v1beta1/proposals",
+    "params": "cosmos/staking/v1beta1/params",
 }
 
 CHAIN_APIS = {
@@ -60,10 +62,6 @@ CHAIN_APIS = {
         },
         "rest_root": "https://lcd-juno.itastakers.com", # https://rest.cosmos.directory/juno
         "rpc_root": "https://rpc.cosmos.directory/juno",
-        "endpoints": {
-            "validators": "/cosmos/staking/v1beta1/validators/",
-            "proposals": "/cosmos/gov/v1beta1/proposals",
-        },
         "twitter": "@JunoNetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/juno.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json",
@@ -96,8 +94,8 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/osmosis',
             "keplr": 'https://wallet.keplr.app/chains/osmosis',
         },
-        "rest_root": "https://api.chihuahua.wtf", 
-        "rpc_root": "https://rpc.cosmos.directory/chihuahua",
+        "rest_root": "https://api.osmosis.interbloc.org", 
+        "rpc_root": "https://rpc.cosmos.directory/osmosis",
         "twitter": "@OsmosisZone",
         "logo": "https://info.osmosis.zone/static/media/logo.551f5780.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json",
@@ -113,7 +111,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/cosmos',
             "keplr": 'https://wallet.keplr.app/chains/cosmos-hub'
         },
-        "rest_root": "https://lcd-cosmoshub.blockapsis.com", 
+        "rest_root": "https://rest.cosmos.directory/cosmoshub", 
         "rpc_root": "https://rpc.cosmos.directory/cosmoshub",
         "twitter": "@Cosmos",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
@@ -559,6 +557,12 @@ def get_chain(name):
         return get_chain(value)
 
     return value
+
+def get_endpoint(key) -> str:
+    if key not in REST_ENDPOINTS.keys():
+        print("Unknown endpoint: {}. Available: \n{}".format(key, REST_ENDPOINTS))        
+
+    return REST_ENDPOINTS.get(key, "")
 
 if __name__ == "__main__":
     print(get_chain('comdex'))

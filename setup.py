@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name = 'cosmpy-api',
-    version = '0.1.3',
+    version = '0.1.6',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["cosmpy_api"],
     package_dir = {'':'src'},
@@ -38,7 +38,8 @@ setup(
         'Operating System :: OS Independent',
     ],
     install_requires = [
-        'requests ~= 2.28.1',
+        # 'requests ~= 2.28.1',
+        'requests>=2.20.0',
     ],
     keywords = ['Cosmos Blockchain', 'Cosmoshub', "atom token"],
 )

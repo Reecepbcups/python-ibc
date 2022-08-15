@@ -7,4 +7,7 @@ from cosmpy_price.token_price import get_price
 __all__ = [
     'get_chain',
     'get_price',
+    'PAGES',
+    'REST_ENDPOINTS',
+    'CHAIN_APIS',
 ]
