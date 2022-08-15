@@ -1,8 +1,7 @@
 import requests
 
-from .convert import simplify_balance_str # . when live, remove . for testing here
-
-from cosmpy_api.chain_apis import REST_ENDPOINTS
+from pyibc_utils.convert import simplify_balance, simplify_balance_str # . when live, remove . for testing here
+from pyibc_api.chain_apis import REST_ENDPOINTS
 
 headers = {'accept': 'application/json'}
 # PAGE_LIMIT = "?pagination.limit=1000"
@@ -73,6 +72,27 @@ def get_validator_stats(chain, rest_url, operator_address, include_number_of_uni
         "unique_delegators": uniqueDelegators,        
     }
 
+def get_outstanding_commission_rewards(valop: str, rest_endpoint: str = "", humanReadable = True) -> dict:
+    # This function should really be async / multithreaded in some way
+    # I assume /outstanding_rewards is their commission AND their self bonded rewards? Look into API
+    response = requests.get(f'{rest_endpoint}/cosmos/distribution/v1beta1/validators/{valop}/commission', headers=headers)
+    print(f'{rest_endpoint}/cosmos/distribution/v1beta1/validators/{valop}/commission')
+
+    data = {}
+    rewards = response.json()['commission']['commission'] # /outstanding_rewards is 'rewards' 'rewards'
+    for r in rewards:
+        denom = r['denom']
+        amt = r['amount']
+        if humanReadable:
+            for k, v in simplify_balance(denom, amt).items():
+                data[k] = v
+        else:
+            data[denom] = amt    
+    return data # {'osmo': '0.04'}
+
+def get_outstanding_commission_rewards_str(valop: str, rest_endpoint: str = ""):
+    data = get_outstanding_commission_rewards(valop, rest_endpoint, humanReadable=True)
+    return ", ".join([f"{k}: {v}" for k, v in data.items()])
 
 def get_latest_validator_set_sorted(rest_url, bondedOnly: bool = True):    
     link = f'{rest_url}/cosmos/staking/v1beta1/validators?pagination.limit=1000'

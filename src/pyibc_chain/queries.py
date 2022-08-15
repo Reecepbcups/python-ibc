@@ -4,9 +4,9 @@ headers = {'accept': 'application/json', 'user-agent': 'Mozilla/5.0 (Windows NT 
 PAGE_LIMIT = "&pagination.limit=1000"
 
 # import simplify_balance from convert
-from .convert import simplify_balance
-from cosmpy_api.chain_apis import REST_ENDPOINTS
-from cosmpy_api import get_chain
+from pyibc_utils.convert import simplify_balance
+from pyibc_api.chain_apis import REST_ENDPOINTS
+from pyibc_api import get_chain
 
 def get_latest_block_height(rest_endpoint: str = "") -> int:
     response = requests.get(f'{rest_endpoint}/blocks/latest', headers=headers).json()

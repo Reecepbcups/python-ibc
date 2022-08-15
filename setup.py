@@ -1,19 +1,16 @@
 from setuptools import setup
 
-######################################################################################################
-################ You May Remove All the Comments Once You Finish Modifying the Script ################
-######################################################################################################
-
 setup(
-    name = 'cosmpy-api',
-    version = '0.2.5',
+    name = 'pyibc',
+    version = '0.1.0',
     description = 'A library to make developing python based programs on cosmos chains easier',  
-    py_modules = ["cosmpy_api"],
+    py_modules = ["pyibc"],
     package_dir = {'':'src'},
     packages = [
-        'cosmpy_api',
-        'cosmpy_price',
-        'cosmpy_chain',
+        'pyibc_api',
+        'pyibc_price',
+        'pyibc_chain',
+        'pyibc_utils',
     ],
     author = 'Reece Williams',
     author_email = 'reecepbcups@gmail.com',

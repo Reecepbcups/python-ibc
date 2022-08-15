@@ -24,7 +24,7 @@ def getTxsAtHeight(height: int, msgType: str = ""):
             TxsWeWant.append(msg)
 
 
-def getTxEvents(height: int, key = "txs"): # or tx_responses
+def getTxEvents(rest_url, height: int, key = "txs"): # or tx_responses
     params = {
     'events': [
         f'tx.height={height}',
@@ -33,7 +33,7 @@ def getTxEvents(height: int, key = "txs"): # or tx_responses
     'order_by': 'ORDER_BY_UNSPECIFIED',
     }
     # curl -X GET "https://api.cosmos.network/cosmos/tx/v1beta1/txs?events=tx.height%3D10449274&events=message.module%3D'distribution'&order_by=ORDER_BY_UNSPECIFIED" -H "accept: application/json"
-    return requests.get(f'{getEndpoint()}/cosmos/tx/v1beta1/txs', params=params, headers=headers).json()[key]
+    return requests.get(f'{rest_url}/cosmos/tx/v1beta1/txs', params=params, headers=headers).json()[key]
 
 
 def getMsgWithdrawValidatorCommission(height: int) -> list:
