@@ -4,10 +4,24 @@
 from cosmpy_api.chain_apis import get_chain
 from cosmpy_price.token_price import get_price
 
+
+from cosmpy_chain.convert import simplify_balance, simplify_balance_str
+from cosmpy_chain.queries import get_latest_block_height, get_outstanding_commission_rewards, get_outstanding_commission_rewards_str
+from cosmpy_chain.validators import get_validator_stats
+
 __all__ = [
     'get_chain',
     'get_price',
     'PAGES',
     'REST_ENDPOINTS',
     'CHAIN_APIS',
+    # utils
+    'simplify_balance',
+    'simplify_balance_str',
+    # chain / validator queries
+    'get_latest_block_height',
+    'get_outstanding_commission_rewards',
+    'get_outstanding_commission_rewards_str',
+    # validators
+    'get_validator_stats',
 ]

@@ -15,4 +15,4 @@ def get_price(coins: list = []) -> float:
     return prices
 
 if __name__ == '__main__':
-    print(_(['juno-network']))
+    print((['juno-network']))

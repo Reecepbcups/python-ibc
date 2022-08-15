@@ -6,13 +6,14 @@ from setuptools import setup
 
 setup(
     name = 'cosmpy-api',
-    version = '0.1.6',
+    version = '0.1.7',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["cosmpy_api"],
     package_dir = {'':'src'},
     packages = [
         'cosmpy_api',
         'cosmpy_price',
+        'cosmpy_chain',
     ],
     author = 'Reece Williams',
     author_email = 'reecepbcups@gmail.com',
