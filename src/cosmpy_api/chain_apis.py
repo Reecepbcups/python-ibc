@@ -13,17 +13,25 @@ Used in / for:
 
 PAGES = {
     "ping": {
-        "gov_page": "/gov/{id}",
-        "staking_page": "/staking/{valoper}",
+        "gov_page": "gov/{id}",
+        "staking_page": "staking/{valoper}",
     },
     "mintscan": {
-        "gov_page": "/proposals/{id}",
-        "staking_page": "/proposals/{valoper}",
+        "gov_page": "proposals/{id}",
+        "staking_page": "proposals/{valoper}",
     },
     "keplr": {
-        "gov_page": "/proposals/{id}",
-        "staking_page": "/validators/{valoper}", 
+        "gov_page": "proposals/{id}",
+        "staking_page": "validators/{valoper}", 
     },
+    "dig": {
+        "gov_page": "proposals/{id}",
+        "staking_page": "https://app.digchain.org/staking", # no valoper view
+    }
+}
+
+CUSTOM_EXPLORER_LINKS = {
+    "dig": "https://app.digchain.org",    
 }
 
 REST_ENDPOINTS = {
@@ -33,10 +41,24 @@ REST_ENDPOINTS = {
     "params": "cosmos/staking/v1beta1/params",
 }
 
+JUNO_REST_API = "https://rest-juno.ecostake.com/cosmwasm/wasm/v1/contract/"
+DAOs = { # Juno DAO_DAO Chains here
+    "raw": {
+        "name": "RAW DAO",
+        "proposals": f"{JUNO_REST_API}/juno1eqfqxc2ff6ywf8t278ls3h3rdk7urmawyrthagl6dyac29r7c5vqtu0zlf/smart/eyJsaXN0X3Byb3Bvc2FscyI6e319?encoding=base64",
+        "vote": "https://www.rawdao.zone/vote",
+        "twitter": "@raw_dao",
+    },
+    "rac": {
+        "name": "Racoon Supply",
+        "proposals": f"{JUNO_REST_API}/juno16l0ymhpwfm63gdcjv8q32z7hqzv8g22spw6ul75l76s5lxtw4anscc5eek/smart/eyJsaXN0X3Byb3Bvc2FscyI6e319?encoding=base64",
+        "vote": "https://daodao.zone/dao/juno1svduqrvcmzpl5g74q8rkm6rhcjnhch2yaagzu4ljuv2u9tf86ltqx9a54s/proposals/A",
+        "twitter": "@RacoonSupply",
+    }
+}
+
+
 CHAIN_APIS = {
-    # alias pointing to the main dict, have a check instance == str type
-    # "udig": "dig",
-    # "dig-chain": "dig",
     "dig": {
         "denom": "udig",
         "name": "Dig Chain",
@@ -65,9 +87,7 @@ CHAIN_APIS = {
         "twitter": "@JunoNetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/juno.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json",
-    },
-
-    "chihuahua": "huahua",
+    },    
     "huahua": {
         "denom": "uhuahua",
         "name": "Chihuahua Chain",
@@ -82,9 +102,7 @@ CHAIN_APIS = {
         "twitter": "@ChihuahuaChain",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/images/huahua.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json",
-    },
-
-    "osmosis": "osmo",
+    },    
     "osmo": {
         "denom": "uosmo",
         "name": "Osmosis",
@@ -99,9 +117,7 @@ CHAIN_APIS = {
         "twitter": "@OsmosisZone",
         "logo": "https://info.osmosis.zone/static/media/logo.551f5780.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json",
-    },
-
-    "cosmos": "atom",
+    },    
     "atom": {
         "denom": "uatom",
         "name": "Cosmos Hub",
@@ -116,9 +132,7 @@ CHAIN_APIS = {
         "twitter": "@Cosmos",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json",
-    },
-
-    "akash": "akt",
+    },    
     "akt": {
         "denom": "uakt",
         "name": "Akash",
@@ -133,9 +147,7 @@ CHAIN_APIS = {
         "twitter": "@Akashnet_",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/chain.json",
-    },
-
-    "stargaze": "stars",
+    },    
     "stars": {
         "denom": "ustars",
         "name": "Stargaze",
@@ -151,7 +163,6 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/images/stars.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/chain.json",
     },
-
     "kava": {
         "denom": "ukava",
         "name": "Kava",
@@ -167,7 +178,6 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/kava.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/chain.json",
     },
-
     "like": {
         "denom": "ulike",
         "name": "Likecoin",
@@ -180,9 +190,7 @@ CHAIN_APIS = {
         "twitter": "@likecoin",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/images/like.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json",
-    },
-
-    "persistence":"xprt",
+    },    
     "xprt": {
         "denom": "uxprt",
         "name": "Persistence",
@@ -197,9 +205,7 @@ CHAIN_APIS = {
         "twitter": "@PersistenceOne",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/xprt.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/chain.json",
-    },
-
-    "comdex":"cmdx",
+    },    
     "cmdx": {
         "denom": "uxmdx",
         "name": "Comdex",
@@ -214,8 +220,6 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/cmdx.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json",
     },
-
-    
     'bcna': {
         "denom": "ubcna",
         "name": "BitCanna",
@@ -229,9 +233,7 @@ CHAIN_APIS = {
         "twitter": "@BitCannaGlobal",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/images/bcna.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json"
-    },
-
-    "bitsong": "btsg",
+    },    
     'btsg': {
         "denom": "ubtsg",
         "name": "BitSong",
@@ -245,9 +247,7 @@ CHAIN_APIS = {
         "twitter": "@BitSongOfficial",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/btsg.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json"
-    },
-
-    "bandchain": "band",
+    },    
     'band': {
         "denom": "uband",
         "name": "Band Protocol",
@@ -261,9 +261,7 @@ CHAIN_APIS = {
         "twitter": "@BandProtocol",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/images/band.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json"
-    },
-
-    "bostrom": "boot",
+    },    
     'boot': {
         "denom": "boot",
         "name": "Bostrom",
@@ -422,9 +420,7 @@ CHAIN_APIS = {
         "twitter": "@regen_network",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/images/regen.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json"
-    },
-
-    "provenance": "hash",
+    },    
     'hash': {
         "denom": "nhash",
         "name": "Provenance Blockchain",
@@ -453,9 +449,7 @@ CHAIN_APIS = {
         "twitter": "@SecretNetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/scrt.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/chain.json"
-    },
-    
-    "dvpn": "sent",
+    },    
     'sent': {
         "denom": "udvpn",
         "name": "Sentinel",
@@ -499,9 +493,7 @@ CHAIN_APIS = {
         "twitter": "@TeamKujira",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/images/kuji.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kujira/chains.json"
-    },
-
-    "terra-classic": "terraC",
+    },    
     'terraC': {
         "denom": "uluna",
         "name": "Terra Classic",
@@ -547,15 +539,31 @@ CHAIN_APIS = {
 
 
 def get_chain(name):
-    if name not in CHAIN_APIS:
+    aliases = {
+        # alias: name in CHAIN_APIS
+        "terra-classic": "terraC",
+        "dvpn": "sent",
+        "provenance": "hash",
+        "bostrom": "boot",
+        "bandchain": "band",
+        "bitsong": "btsg",
+        "comdex":"cmdx",
+        "persistence":"xprt",
+        "stargaze": "stars",
+        "akash": "akt",
+        "cosmos": "atom",
+        "osmosis": "osmo",
+        "chihuahua": "huahua",
+        "dig-chain": "dig"
+    }
+    if name not in CHAIN_APIS.keys() and name not in aliases.keys():
         raise ValueError("Unknown chain: {}".format(name))
     
+    if name in aliases.keys():
+        # name was an alias, so we get the real name by calling this function on itself again
+        return get_chain(aliases[name])
+        
     value = CHAIN_APIS[name]
-
-    if isinstance(value, str):
-        # value is a string, so we get that string, and use that value to get the object
-        return get_chain(value)
-
     return value
 
 def get_endpoint(key) -> str:
@@ -565,4 +573,4 @@ def get_endpoint(key) -> str:
     return REST_ENDPOINTS.get(key, "")
 
 if __name__ == "__main__":
-    print(get_chain('comdex'))
+    print(get_chain('dig-chain'))
