@@ -312,7 +312,7 @@ CHAIN_APIS = {
         "explorers": {
             "ping": "https://ping.pub/evmos",
             "mintscan": "https://www.mintscan.io/evmos",
-            "keplr": "https://wallet.keplr.app/chains/evmos/proposals"
+            "keplr": "https://wallet.keplr.app/chains/evmos"
         },
         "rest_root": "https://lcd.evmos.ezstaking.io/",
         "rpc_root": "",
