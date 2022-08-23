@@ -6,6 +6,11 @@ def simplify_balance(denom: str, amount) -> dict:
         # return f"{fmtNum} {denom[1::]}"
         return {denom[1::]: fmtNum}
 
+    elif denom.startswith('n'): # ncheq
+        fmtNum = "{:,}".format(round(float(amount) / 1_000_000_000, 2))
+        # return f"{fmtNum} {denom[1::]}"
+        return {denom[1::]: fmtNum}
+    
     elif denom.startswith('a'): # aevmos
         fmtNum = "{:,}".format(round(float(amount) / 1_000_000_000_000_000_000, 2))
         # return f"{fmtNum} {denom[1::]}"
