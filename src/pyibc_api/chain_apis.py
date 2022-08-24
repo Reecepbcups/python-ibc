@@ -306,16 +306,16 @@ CHAIN_APIS = {
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json"
     },
     'evmos': {
-        "denom": "",
-        "name": "",
-        "coingecko_id": "",
+        "denom": "uevmos",
+        "name": "Evmos",
+        "coingecko_id": "evmos",
         "explorers": {
             "ping": "https://ping.pub/evmos",
             "mintscan": "https://www.mintscan.io/evmos",
             "keplr": "https://wallet.keplr.app/chains/evmos"
         },
-        "rest_root": "https://lcd.evmos.ezstaking.io/",
-        "rpc_root": "",
+        "rest_root": "https://rest.cosmos.directory/evmos",
+        "rpc_root": "https://rpc.cosmos.directory/evmos",
         "twitter": "@EvmosOrg",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/images/evmos.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json"
