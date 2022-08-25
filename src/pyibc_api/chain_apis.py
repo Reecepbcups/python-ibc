@@ -521,6 +521,19 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/images/luna.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/chain.json"
     },
+    'passage': {
+        "denom": "upasg",
+        "name": "Passage",
+        "explorers": {
+            "ping": 'https://ping.pub/passage',
+            "mintscan": 'https://www.mintscan.io/passage',  
+        },
+        "rest_root": "https://rest.cosmos.directory/passage", # https://rest.cosmos.directory/juno
+        "rpc_root": "https://rpc.cosmos.directory/passage",
+        "twitter": "@Passage3D",
+        "logo": "https://github.com/cosmos/chain-registry/raw/master/passage/images/pasg.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/passage/chain.json",
+    },
     'umee': {
         "denom": "uumee",
         "name": "umee",
@@ -553,7 +566,8 @@ aliases = {
     "cosmos": "atom",
     "osmosis": "osmo",
     "chihuahua": "huahua",
-    "dig-chain": "dig"
+    "dig-chain": "dig",
+    "passage": "pasg",
 }
 
 def get_chain(name):
