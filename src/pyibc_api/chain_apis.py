@@ -521,7 +521,7 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/images/luna.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/chain.json"
     },
-    'passage': {
+    'pasg': {
         "denom": "upasg",
         "name": "Passage",
         "explorers": {
