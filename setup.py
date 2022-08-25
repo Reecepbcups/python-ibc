@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'python-ibc',
-    version = '0.1.4',
+    version = '0.1.5',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["pyibc"],
     package_dir = {'':'src'},
@@ -17,7 +17,7 @@ setup(
     # long_description = open('README.md').read() + '\n\n' + open('CHANGELOG.md').read(),
     long_description = open('README.md').read() + '\n\n',
     long_description_content_type = "text/markdown",
-    url='https://github.com/Reecepbcups/cosmpy-api',
+    url='https://github.com/Reecepbcups/pyibc',
     include_package_data=True,
     classifiers  = [
         'Development Status :: 4 - Beta',

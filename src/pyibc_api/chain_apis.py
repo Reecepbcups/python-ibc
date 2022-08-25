@@ -551,6 +551,10 @@ CHAIN_APIS = {
     },
 }
 
+# TODO: Wallet prefixes -> CHAIN_APIs here for py gov bot.
+WALLETS = {}
+
+# Normal names / aliases here
 aliases = {
     # alias: name in CHAIN_APIS
     "terra-classic": "terraC",
