@@ -551,8 +551,8 @@ CHAIN_APIS = {
     },
 }
 
-# TODO: Wallet prefixes -> CHAIN_APIs here for py gov bot.
-WALLETS = {}
+# TODO: Ticker symbols -> CHAIN_APIs here for py gov bot. (ticker alises to the wallet prefix)
+TICKERS = {}
 
 # Normal names / aliases here
 aliases = {
