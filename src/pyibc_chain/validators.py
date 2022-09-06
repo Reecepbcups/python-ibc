@@ -1,4 +1,4 @@
-import requests
+import requests, time
 
 from pyibc_utils.convert import simplify_balance, simplify_balance_str # . when live, remove . for testing here
 from pyibc_api.chain_apis import REST_ENDPOINTS
@@ -16,7 +16,7 @@ def get_validator_stats(chain, rest_url, operator_address, include_number_of_uni
 
 
     # get a validators details
-    queryEndpoint = f"{ROOT_URL}/{REST_ENDPOINTS['validator_info']}/{operator_address}"
+    queryEndpoint = f"{ROOT_URL}/{REST_ENDPOINTS['validator_info']}/{operator_address}".replace("{EPOCH}", f'{int(time.time())}')
     r = requests.get(queryEndpoint, headers=headers)
     if r.status_code != 200:
         print(f"\n(Error): {r.status_code} on {queryEndpoint}")
