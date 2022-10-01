@@ -83,7 +83,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/juno',
             "keplr": 'https://wallet.keplr.app/chains/juno',        
         },
-        "rest_root": "https://lcd-juno.itastakers.com", # https://rest.cosmos.directory/juno
+        "rest_root": "https://rest.cosmos.directory/juno", # https://rest.cosmos.directory/juno
         "rpc_root": "https://rpc.cosmos.directory/juno",
         "twitter": "@JunoNetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/images/juno.png",
@@ -98,7 +98,7 @@ CHAIN_APIS = {
             "ping": 'https://ping.pub/chihuahua',
             "mintscan": 'https://www.mintscan.io/chihuahua',
         },
-        "rest_root": "https://api.chihuahua.wtf", 
+        "rest_root": "https://rest.cosmos.directory/chihuahua", 
         "rpc_root": "https://rpc.cosmos.directory/chihuahua",
         "twitter": "@ChihuahuaChain",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/images/huahua.png",
@@ -113,7 +113,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/osmosis',
             "keplr": 'https://wallet.keplr.app/chains/osmosis',
         },
-        "rest_root": "https://api.osmosis.interbloc.org", 
+        "rest_root": "https://rest.cosmos.directory/osmosis", 
         "rpc_root": "https://rpc.cosmos.directory/osmosis",
         "twitter": "@OsmosisZone",
         "logo": "https://info.osmosis.zone/static/media/logo.551f5780.png",
@@ -128,7 +128,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/cosmos',
             "keplr": 'https://wallet.keplr.app/chains/cosmos-hub'
         },
-        "rest_root": "https://lcd-cosmoshub.whispernode.com/", 
+        "rest_root": "https://rest.cosmos.directory/cosmoshub",
         "rpc_root": "https://rpc.cosmos.directory/cosmoshub",
         "twitter": "@Cosmos",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/images/atom.png",
@@ -143,7 +143,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/akash',
             "keplr": 'https://wallet.keplr.app/chains/akash'
         },
-        "rest_root": "https://akash.api.ping.pub", 
+        "rest_root": "https://rest.cosmos.directory/akash", 
         "rpc_root": "https://rpc.cosmos.directory/akash",
         "twitter": "@Akashnet_",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/images/akt.png",
@@ -158,7 +158,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/stargaze',
             "keplr": 'https://wallet.keplr.app/chains/stargaze'
         },
-        "rest_root": "https://api-stargaze-ia.notional.ventures/", 
+        "rest_root": "https://rest.cosmos.directory/stargaze", 
         "rpc_root": "https://rpc.cosmos.directory/stargaze",
         "twitter": "@StargazeZone",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/images/stars.png",
@@ -173,7 +173,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/kava',
             "keplr": 'https://wallet.keplr.app/chains/kava'
         },
-        "rest_root": "https://api.data.kava.io", 
+        "rest_root": "https://rest.cosmos.directory/kava", 
         "rpc_root": "https://rpc.cosmos.directory/kava",
         "twitter": "@kava_platform",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/images/kava.png",
@@ -186,7 +186,7 @@ CHAIN_APIS = {
         "explorers": {
             "ping": 'https://ping.pub/likecoin',
         },
-        "rest_root": "https://mainnet-node.like.co", 
+        "rest_root": "https://rest.cosmos.directory/likecoin", 
         "rpc_root": "https://rpc.cosmos.directory/likecoin",
         "twitter": "@likecoin",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/images/like.png",
@@ -201,7 +201,7 @@ CHAIN_APIS = {
             "mintscan": 'https://www.mintscan.io/persistence',
             "keplr": 'https://wallet.keplr.app/chains/persistence',            
         },
-        "rest_root": "https://rest.core.persistence.one", 
+        "rest_root": "https://rest.cosmos.directory/persistence", 
         "rpc_root": "https://rpc.cosmos.directory/persistence",
         "twitter": "@PersistenceOne",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/images/xprt.png",
@@ -215,8 +215,8 @@ CHAIN_APIS = {
             "ping": 'https://ping.pub/comdex',
             "mintscan": 'https://www.mintscan.io/comdex',            
         },
-        "rest_root": "https://rest.comdex.one", 
-        "rpc_root": "",
+        "rest_root": "https://rest.cosmos.directory/comdex", 
+        "rpc_root": "https://rpc.cosmos.directory/comdex",
         "twitter": "@ComdexOfficial",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/images/cmdx.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json",
@@ -229,7 +229,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/bitcanna",
             "mintscan": "https://www.mintscan.io/bitcanna"
         },
-        "rest_root": "https://lcd.bitcanna.io",
+        "rest_root": "https://rest.cosmos.directory/bitcanna",
         "rpc_root": "https://rpc.cosmos.directory/bitcanna",
         "twitter": "@BitCannaGlobal",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/images/bcna.png",
@@ -243,7 +243,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/bitsong",
             "mintscan": "https://www.mintscan.io/bitsong"
         },
-        "rest_root": "https://lcd-bitsong.itastakers.com",
+        "rest_root": "https://rest.cosmos.directory/bitsong",
         "rpc_root": "https://rpc.cosmos.directory/bitsong",
         "twitter": "@BitSongOfficial",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/images/btsg.png",
@@ -257,7 +257,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/band-protocol",
             "mintscan": "https://www.mintscan.io/akash"
         },
-        "rest_root": "https://laozi1.bandchain.org/api",
+        "rest_root": "https://rest.cosmos.directory/bandchain",
         "rpc_root": "https://rpc.cosmos.directory/bandchain",
         "twitter": "@BandProtocol",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/images/band.png",
@@ -271,8 +271,8 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/bostrom",
             "keplr": "https://wallet.keplr.app/chains/bostrom"
         },
-        "rest_root": "https://lcd.bostrom.cybernode.ai",
-        "rpc_root": "https://rest.cosmos.directory/bostrom",
+        "rest_root": "https://rest.cosmos.directory/bostrom",
+        "rpc_root": "https://rpc.cosmos.directory/bostrom",
         "twitter": "@Cyber_devs",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/images/boot.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/chain.json"
@@ -284,7 +284,7 @@ CHAIN_APIS = {
         "explorers": {
             "ping": "https://ping.pub/cheqd"
         },
-        "rest_root": "https://api.cheqd.net",
+        "rest_root": "https://rest.cosmos.directory/cheqd",
         "rpc_root": "https://rpc.cosmos.directory/cheqd",
         "twitter": "@cheqd_io",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/cheqd/images/cheq.png",
@@ -343,7 +343,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/gravity-bridge",
             "keplr": "https://wallet.keplr.app/chains/gravity-bridge"
         },
-        "rest_root": "https://gravitychain.io:1317",
+        "rest_root": "https://rest.cosmos.directory/gravitybridge",
         "rpc_root": "https://rpc.cosmos.directory/gravitybridge",
         "twitter": "@gravity_bridge",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/images/grav.png",
@@ -357,7 +357,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/injective",
             "mintscan": "https://www.mintscan.io/injective"
         },
-        "rest_root": "https://public.lcd.injective.network",
+        "rest_root": "https://rest.cosmos.directory/injective",
         "rpc_root": "https://rpc.cosmos.directory/injective",
         "twitter": "@InjectiveLabs",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/images/inj.png",
@@ -372,7 +372,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/iris",
             "keplr": "https://wallet.keplr.app/chains/irisnet"
         },
-        "rest_root": "https://lcd-iris.keplr.app",
+        "rest_root": "https://rest.cosmos.directory/irisnet",
         "rpc_root": "https://rpc.cosmos.directory/irisnet",
         "twitter": "@irisnetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/images/iris.png",
@@ -387,7 +387,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/starname",
             "keplr": "https://wallet.keplr.app/chains/starname"
         },
-        "rest_root": "https://lcd-iov.keplr.app",
+        "rest_root": "https://rest.cosmos.directory/starname",
         "rpc_root": "https://rpc.cosmos.directory/starname",
         "twitter": "@starname_me",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/starname/images/iov.png",
@@ -401,7 +401,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/lum-network",
             "mintscan": "https://www.mintscan.io/lum"
         },
-        "rest_root": "https://node0.mainnet.lum.network/rest",
+        "rest_root": "https://rest.cosmos.directory/lumnetwork",
         "rpc_root": "https://rpc.cosmos.directory/lumnetwork",
         "twitter": "@lum_network",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/images/lum.png",
@@ -416,7 +416,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/regen",
             "keplr": "https://wallet.keplr.app/chains/regen"
         },
-        "rest_root": "https://regen.stakesystems.io",
+        "rest_root": "https://rest.cosmos.directory/regen",
         "rpc_root": "https://rpc.cosmos.directory/regen",
         "twitter": "@regen_network",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/images/regen.png",
@@ -430,7 +430,7 @@ CHAIN_APIS = {
             "ping": "https://ping.pub/provenance",
             "mintscan": "https://www.mintscan.io/provenance",
         },
-        "rest_root": "https://api.provenance.io",
+        "rest_root": "https://rest.cosmos.directory/provenance",
         "rpc_root": "https://rpc.cosmos.directory/provenance",
         "twitter": "@provenancefdn",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/provenance/images/hash.png",
@@ -445,7 +445,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/secret",
             "keplr": "https://wallet.keplr.app/chains/secret-network"
         },
-        "rest_root": "https://api.scrt.network",
+        "rest_root": "https://rest.cosmos.directory/secretnetwork",
         "rpc_root": "https://rpc.cosmos.directory/secretnetwork",
         "twitter": "@SecretNetwork",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/secretnetwork/images/scrt.png",
@@ -460,7 +460,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/sentinel",
             "keplr": "https://wallet.keplr.app/chains/sentinel"
         },
-        "rest_root": "https://lcd-sentinel.keplr.app",
+        "rest_root": "https://rest.cosmos.directory/sentinel",
         "rpc_root": "https://rpc.cosmos.directory/sentinel",
         "twitter": "@Sentinel_co",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/images/dvpn.png",
@@ -502,7 +502,7 @@ CHAIN_APIS = {
         "explorers": {
             "ping": "https://ping.pub/terra-luna"
         },
-        "rest_root": "https://blockdaemon-terra-lcd.api.bdnodes.net:1317",
+        "rest_root": "https://rest.cosmos.directory/terra",
         "rpc_root": "https://rpc.cosmos.directory/terra",
         "twitter": "@terraC_money",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/images/luna.png",
@@ -515,7 +515,7 @@ CHAIN_APIS = {
         "explorers": {
             "ping": "https://ping.pub/terra2"
         },
-        "rest_root": "https://phoenix-lcd.terra.dev",
+        "rest_root": "https://rest.cosmos.directory/terra2",
         "rpc_root": "https://rpc.cosmos.directory/terra2",
         "twitter": "@terra_money",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/terra2/images/luna.png",
@@ -543,7 +543,7 @@ CHAIN_APIS = {
             "mintscan": "https://www.mintscan.io/umee",
             "keplr": "https://wallet.keplr.app/chains/umee"
         },
-        "rest_root": "https://api.blue.main.network.umee.cc",
+        "rest_root": "https://rest.cosmos.directory/umee",
         "rpc_root": "https://rpc.cosmos.directory/umee",
         "twitter": "@Umee_CrossChain",
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/images/umee.png",
