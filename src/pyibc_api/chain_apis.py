@@ -549,6 +549,19 @@ CHAIN_APIS = {
         "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/images/umee.png",
         "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/chain.json"
     },
+    'canto': {
+        "denom": "ucanto",
+        "name": "Canto",
+        "coingecko_id": "canto",
+        "explorers": {
+            "ping": "https://ping.pub/canto"
+        },
+        "rest_root": "https://rest.cosmos.directory/canto",
+        "rpc_root": "https://rpc.cosmos.directory/canto",
+        "twitter": "@CantoPublic",
+        "logo": "https://raw.githubusercontent.com/cosmos/chain-registry/master/canto/images/canto.png",
+        "chain-registry": "https://raw.githubusercontent.com/cosmos/chain-registry/master/canto/chain.json"
+    },
 }
 
 # TODO: Ticker symbols -> CHAIN_APIs here for py gov bot. (ticker alises to the wallet prefix)
