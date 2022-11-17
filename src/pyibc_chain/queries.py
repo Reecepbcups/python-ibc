@@ -46,7 +46,8 @@ def get_balances(chain, walletAddr) -> dict:
     Gets the balances JSON from chain & returns those values
     # [{"denom": "ucraft","amount": "69908452"},{"denom": "uexp","amount": "1000100"}]
     '''
-    queryEndpoint = get_chain(chain)['rest_root'] + "/" + REST_ENDPOINTS['balances'] + f"/{walletAddr}"
+    info = get_chain(chain)
+    queryEndpoint = info.rest_root + "/" + REST_ENDPOINTS['balances'] + f"/{walletAddr}"
     r = requests.get(queryEndpoint, headers=headers) 
     if r.status_code != 200:
         print(f"\n(Error): {r.status_code} on {queryEndpoint}")
@@ -59,7 +60,10 @@ def get_balances(chain, walletAddr) -> dict:
 
 
 if __name__ == "__main__":    
-    chain_endpoint = get_chain("osmosis")['rest_root']
+    from pyibc_api import ChainInfo
+    info: ChainInfo
+    info = get_chain("osmosis")
+    chain_endpoint = info.rest_root
     # print(get_latest_block_height(chain_endpoint))
 
     # print(get_outstanding_commission_rewards("osmovaloper16s96n9k9zztdgjy8q4qcxp4hn7ww98qk5wjn0s", chain_endpoint))

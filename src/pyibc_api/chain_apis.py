@@ -12,7 +12,7 @@ from dataclasses import dataclass
 
 # NOTE: no /'s after any URL
 
-# TODO: ping is not = ping-pub
+# TODO: ping is now = ping-pub
 
 PAGES = {
     "ping": {
@@ -652,10 +652,10 @@ def get_chain(name):
     
     if name in aliases.keys():
         # name was an alias, so we get the real name by calling this function on itself again
-        return get_chain(aliases[name])
+        return CHAIN_APIS[aliases[name]]
 
     if name in wallets.keys():
-        return get_chain(wallets[name])
+        return CHAIN_APIS[wallets[name]]
         
     value = CHAIN_APIS[name]
     return value
@@ -677,4 +677,4 @@ def get_endpoint(key) -> str:
     return REST_ENDPOINTS.get(key, "")
 
 if __name__ == "__main__":
-    print(get_chain('dig-chain'))
+    print(get_chain('dig'))
