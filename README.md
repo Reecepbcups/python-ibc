@@ -9,6 +9,14 @@ Includes:
 - chain_apis (rest, rpc, denom, logo png, twitter, explorers, staking & gov pages, coingecko_id, & chain_registery )
 ```
 
+## Used by
+
+Used in / for:
+
+- <https://github.com/Reecepbcups/cosmos-validator-income-tracker> (prices, queries, etc.)
+- <https://github.com/Reecepbcups/cosmos-governance-bot>
+- <https://github.com/Reecepbcups/cosmos-balance-bot>
+
 ## Example usage
 
 ```py

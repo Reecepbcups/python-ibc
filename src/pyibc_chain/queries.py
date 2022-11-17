@@ -36,37 +36,37 @@ def get_outstanding_commission_rewards_str(valop: str, rest_endpoint: str = ""):
     return ", ".join([f"{k}: {v}" for k, v in data.items()])
 
 def get_latest_block_transactions(rest_endpoint: str = "", block: str = "latest") -> list:
-    l = f'{rest_endpoint}/blocks/{block}'
-    # print(l)
+    l = f'{rest_endpoint}/blocks/{block}'    
     response = requests.get(l, headers=headers).json()
     return response['block']['data']['txs']
 
-def get_balances(chain, walletAddr) -> dict:
+def get_balances(chain_name: str, walletAddr) -> dict:
     '''
     Gets the balances JSON from chain & returns those values
-    # [{"denom": "ucraft","amount": "69908452"},{"denom": "uexp","amount": "1000100"}]
+    [{"denom": "ucraft","amount": "69908452"},{"denom": "uexp","amount": "1000100"}]
     '''
-    info = get_chain(chain)
-    queryEndpoint = info.rest_root + "/" + REST_ENDPOINTS['balances'] + f"/{walletAddr}"
+    rest_endpoint = get_chain(chain_name).rest_root
+    if rest_endpoint.endswith("/"):
+        rest_endpoint = rest_endpoint[:-1]
+    queryEndpoint = rest_endpoint + "/" + REST_ENDPOINTS['balances'] + f"/{walletAddr}"
     r = requests.get(queryEndpoint, headers=headers) 
     if r.status_code != 200:
         print(f"\n(Error): {r.status_code} on {queryEndpoint}")
         return {}
-
-    # TODO: simplify_balance here?
-    # http://API:1317/cosmos/bank/v1beta1/balances/craft10r39fueph9fq7a6lgswu4zdsg8t3gxlqd6lnf0
-    # [{'denom': 'ibc/AA1C80225BCA7B32ED1FC6ABF8B8E899BEB48ECDB4B417FD69873C6D715F97E7', 'amount': '14'}, {'denom': 'ibc/D189335C6E4A68B513C10AB227BF1C1D38C746766278BA3EEB4FB14124F1D858', 'amount': '30574858'}, {'denom': 'uosmo', 'amount': '448989'}]
+    
+    # http://API:1317/cosmos/bank/v1beta1/balances/craft10r39fueph9fq7a6lgswu4zdsg8t3gxlqd6lnf0    
     return r.json()['balances']
 
 
 if __name__ == "__main__":    
     from pyibc_api import ChainInfo
     info: ChainInfo
-    info = get_chain("osmosis")
+    info = get_chain("pasg")
     chain_endpoint = info.rest_root
+    print(chain_endpoint)
     # print(get_latest_block_height(chain_endpoint))
 
     # print(get_outstanding_commission_rewards("osmovaloper16s96n9k9zztdgjy8q4qcxp4hn7ww98qk5wjn0s", chain_endpoint))
     # print(get_outstanding_commission_rewards_str("osmovaloper16s96n9k9zztdgjy8q4qcxp4hn7ww98qk5wjn0s", chain_endpoint))
 
-    print(get_balances("osmosis", "osmo10r39fueph9fq7a6lgswu4zdsg8t3gxlqyhl56p"))
+    # print(get_balances("osmosis", "osmo10r39fueph9fq7a6lgswu4zdsg8t3gxlqyhl56p"))

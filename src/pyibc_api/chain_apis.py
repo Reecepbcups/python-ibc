@@ -1,10 +1,5 @@
 '''
 Dict of chains following the same schema so all my applications can use.
-
-Used in / for:
-- https://github.com/Reecepbcups/cosmos-validator-income-tracker (prices, queries, etc.)
-- https://github.com/Reecepbcups/cosmos-governance-bot
-- https://github.com/Reecepbcups/cosmos-balance-bot
 '''
 
 import requests
@@ -587,7 +582,7 @@ class ChainInfo:
 # TODO: Ticker symbols -> CHAIN_APIs here for py gov bot. (ticker alises to the wallet prefix)
 # ^ This should be handled now
 CHAIN_APIS = {} # symbols -> chain info
-wallets = {} # wallet prefix -> symbol (-> chain information from there)
+CHAIN_APIS_WALLETS = {} # wallet prefix -> symbol (-> chain information from there)
 
 info = requests.get(COSMOS_DIR_URL).json().get("chains", [])
 chain: dict # annotation
@@ -623,7 +618,7 @@ for chain in info:
     cinfo.chain_registry = f"https://raw.githubusercontent.com/cosmos/chain-registry/master/{chain.get('path')}/chain.json"
 
     CHAIN_APIS[symbol.lower()] = cinfo
-    wallets[bech32] = symbol.lower()
+    CHAIN_APIS_WALLETS[bech32] = symbol.lower()
     continue
 
 # Normal names / aliases here
@@ -654,8 +649,8 @@ def get_chain(name):
         # name was an alias, so we get the real name by calling this function on itself again
         return CHAIN_APIS[aliases[name]]
 
-    if name in wallets.keys():
-        return CHAIN_APIS[wallets[name]]
+    if name in CHAIN_APIS_WALLETS.keys():
+        return CHAIN_APIS[CHAIN_APIS_WALLETS[name]]
         
     value = CHAIN_APIS[name]
     return value
@@ -667,8 +662,8 @@ def get_all_chains():
         keys.append(alias)
     return keys
 
-def get_all_chains_by_wallet():
-    return list(wallets.keys())
+def get_all_chains_by_wallet_prefix():
+    return list(CHAIN_APIS_WALLETS.keys())
     
 def get_endpoint(key) -> str:
     if key not in REST_ENDPOINTS.keys():
