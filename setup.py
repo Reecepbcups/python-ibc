@@ -11,7 +11,7 @@ import sys
 # if "--version" in sys.argv:    
     # get the value after --version
 
-OUR_VERSION = "0.2.0a1"
+OUR_VERSION = "0.2.0a2"
 # OUR_VERSION = str(sys.argv[-1]) # todo:WHY DOES THIS NOT WORK??
 # sys.argv.remove(str(OUR_VERSION))
 

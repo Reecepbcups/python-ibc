@@ -1,4 +1,4 @@
-OUR_VERSION="0.2.0a1"
+# update version in setup.py
 
 # https://github.com/jinhangjiang/Your-First-Python-Package-on-PyPI
 all: clean build-py install
@@ -8,7 +8,7 @@ clean:
 	@echo "Cleaned up"
 
 build-py:	
-	@python setup.py build sdist bdist_wheel #$(OUR_VERSION)
+	@python setup.py build sdist bdist_wheel
 
 install:
 	@python -m pip install dist/*-*.tar.gz
