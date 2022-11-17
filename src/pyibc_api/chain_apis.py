@@ -7,7 +7,7 @@ Used in / for:
 - https://github.com/Reecepbcups/cosmos-balance-bot
 '''
 
-import os, json, requests
+import requests
 from dataclasses import dataclass
 
 # NOTE: no /'s after any URL

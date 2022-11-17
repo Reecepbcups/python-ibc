@@ -1,8 +1,25 @@
 from setuptools import setup
+from distutils.core import setup
+
+import sys
+
+# if len(args) < 2:
+#     print(args[0], '<version>')
+#     sys.exit(1)
+
+# version = "0.0.0"
+# if "--version" in sys.argv:    
+    # get the value after --version
+
+OUR_VERSION = "0.2.0a1"
+# OUR_VERSION = str(sys.argv[-1]) # todo:WHY DOES THIS NOT WORK??
+# sys.argv.remove(str(OUR_VERSION))
+
+
 
 setup(
-    name = 'python-ibc',
-    version = '0.1.9',
+    name = 'python-ibc',    
+    version = f'{str(OUR_VERSION)}',
     description = 'A library to make developing python based programs on cosmos chains easier',  
     py_modules = ["pyibc"],
     package_dir = {'':'src'},
@@ -35,8 +52,7 @@ setup(
         'Operating System :: Microsoft :: Windows',
         'Operating System :: OS Independent',
     ],
-    install_requires = [
-        # 'requests ~= 2.28.1',
+    install_requires = [        
         'requests>=2.20.0',
     ],
     keywords = ['Cosmos Blockchain', 'Cosmoshub', "atom token"],
